@@ -17,17 +17,16 @@ class MakeSum implements ShouldQueue
 
     public $num1;
     public $num2;
-    public $userId;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($num1, $num2, $userId)
+    public function __construct($num1, $num2)
     {
         $this->num1 = $num1;
         $this->num2 = $num2;
-        $this->userId = $userId;
+        
     }
 
 
