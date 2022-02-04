@@ -16,17 +16,17 @@ class ConvertCelsius implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $farenheit;
-    public $userId;
+    //public $userId;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($farenheit, $userId)
+    public function __construct($farenheit)
     {
         $this->farenheit = $farenheit;
         
-        $this->userId = $userId;
+        //$this->userId = $userId;
     }
 
 
