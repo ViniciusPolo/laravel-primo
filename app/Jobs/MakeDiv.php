@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\User;
+use App\Notifications\DivMade;
 use App\Notifications\PrimeFound;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -41,14 +42,14 @@ class MakeDiv implements ShouldQueue
         $div=0;
         $user = User::find($this->userId);
         if($this->num2 == 0){
-            $user->notify(new PrimeFound
+            $user->notify(new DivMade
             (
                     'Erro',
                     'Divisão por zero'
             ));
         } else {
             $div = $this->num1 / $this->num2;
-            $user->notify(new PrimeFound
+            $user->notify(new DivMade
             (
                     'Sucesso',
                     'Div = '.$div
